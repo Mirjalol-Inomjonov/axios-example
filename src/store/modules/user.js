@@ -34,6 +34,11 @@ const users = {
         vuex.commit("PUSH_USERS", data.data);
       });
     },
+    REMOVE_ONE_USER(vuex,id){
+      axios.delete(`${BASE_URL}posts`, id).then(data =>{
+        vuex.commit('REMOVE_USER',data.data)
+      })
+    }
   },
   getters: {},
 };
